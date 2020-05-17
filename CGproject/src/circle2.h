@@ -32,7 +32,62 @@ inline std::vector<circle_t> create_circles()
 {
 	std::vector<circle_t> circles;
 	circle_t c;
-	 //		center				 radius		theta					color	
+	//		center				 radius		theta					color	
+
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +1.50f; c.orbit_radius =+1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +2.00f; c.orbit_radius =+1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +2.50f; c.orbit_radius =+1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +1.00f; c.orbit_radius =+1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +3.00f; c.orbit_radius =+1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +3.50f; c.orbit_radius =+1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +1.00f; c.orbit_radius =-1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +1.50f; c.orbit_radius =-1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +2.00f; c.orbit_radius =-1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +2.50f; c.orbit_radius =-1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +3.00f; c.orbit_radius =-1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +3.50f; c.orbit_radius =-1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+																																												   
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -1.00f; c.orbit_radius = +1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -1.50f; c.orbit_radius = +1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -2.00f; c.orbit_radius = +1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -2.50f; c.orbit_radius = +1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -3.00f; c.orbit_radius = +1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -3.50f; c.orbit_radius = +1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -1.00f; c.orbit_radius = -1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -1.50f; c.orbit_radius = -1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -2.00f; c.orbit_radius = -1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -2.50f; c.orbit_radius = -1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -3.00f; c.orbit_radius = -1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -3.50f; c.orbit_radius = -1.50f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +1.00f; c.orbit_radius = +0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +1.50f; c.orbit_radius = +0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +2.00f; c.orbit_radius = +0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +2.50f; c.orbit_radius = +0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +3.00f; c.orbit_radius = +0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +3.50f; c.orbit_radius = +0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -1.00f; c.orbit_radius = -0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -1.50f; c.orbit_radius = -0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -2.00f; c.orbit_radius = -0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -2.50f; c.orbit_radius = -0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -3.00f; c.orbit_radius = -0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+	c = { vec3(0,0,0),	0.10f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = -3.50f; c.orbit_radius = -0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	c = { vec3(0,0,0),	0.30f,	0.0f,	vec4(0.0f,0.0f,1.5f,0.5f) };  c.orbit_height = +0.00f; c. orbit_radius = 0.00f; c.orbit_speed = 0.00f; c.rotation_speed = 1.2f;         circles.emplace_back(c);	  //태양
@@ -44,9 +99,6 @@ inline std::vector<circle_t> create_circles()
 	c = { vec3(0,0,0),	0.03f,	0.0f,	vec4(1.0f,0.5f,0.5f,1.0f) };  c.orbit_height = +0.02f; c. orbit_radius = 2.20f; c.orbit_speed = 3.00f; c.rotation_speed = 3.6f;      	circles.emplace_back(c);  //행성6
 	c = { vec3(0,0,0),	0.05f,	0.0f,	vec4(1.0f,0.5f,0.5f,1.0f) };  c.orbit_height = -0.01f;  c.orbit_radius = 1.65f; c.orbit_speed = 2.50f; c.rotation_speed = 2.5f;      	circles.emplace_back(c);  //행성7
 	c = { vec3(0,0,0),	0.05f,	0.0f,	vec4(1.0f,0.5f,0.5f,1.0f) };  c.orbit_height = -0.05f;  c.orbit_radius = 1.95f; c.orbit_speed = 2.70f; c.rotation_speed = 2.9f;		 	circles.emplace_back(c);  //행성7
-
-
-
 
 
 

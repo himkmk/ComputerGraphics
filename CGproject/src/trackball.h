@@ -2,9 +2,11 @@
 #define __TRACKBALL_H__
 #include "cgmath.h"
 
+
+// 외부에서 cam 변수를 불러옴. 따라서  main 파일에서 정의된 카메라 이름이 cam 이어야함.
 struct camera
 {
-	vec3	eye = vec3(0, 0, 5);
+	vec3	eye = vec3(0, 0, 15);
 	vec3	at = vec3(0, 0, 0);
 	vec3	up = vec3(0, 1, 0);
 	mat4	view_matrix = mat4::look_at(eye, at, up);
@@ -102,7 +104,7 @@ inline mat4 trackball::update(vec2 m) const  //input  n == npos
 	// - mat3(view_matrix0): rotation-only view matrix
 	// - mat3(view_matrix0).transpose(): inverse view-to-world matrix
 	//vec3 v = mat3(view_matrix0).transpose() * p0.cross(p1);
-	vec3 v = mat3(view_matrix0).transpose() * p0.cross(p1);
+	vec3 v = p0.cross(p1);
 
 	float theta = asin(min(v.length(), 1.0f));
 
@@ -110,11 +112,26 @@ inline mat4 trackball::update(vec2 m) const  //input  n == npos
 	// trackball rotation in the world space
 	
 
-
+/*
 	cam.eye = eye0 * mat4::rotate(v.normalize(), theta);
 	cam.at = at0 * mat4::rotate(v.normalize(), theta);
 	cam.up = up0 * mat4::rotate(v.normalize(), theta);
+*/
+	//cam.eye = eye0 * mat4::translate(eye0) *  mat4::rotate(v.normalize(), theta) * mat4::translate(eye0).transpose();
 	
+	vec4 eye00 = vec4(eye0, 1);
+	vec4 at00 = vec4(at0, 1);
+	vec4 up00 = vec4(up0, 0);
+	
+	vec4 eye = (mat4::translate(cam.eye) * mat4::rotate(v.normalize(), theta) * (mat4::translate(-1 * cam.eye) * eye00)) ;
+	vec4 at = (mat4::translate(cam.eye) * mat4::rotate(v.normalize(), theta) * (mat4::translate(-1 * cam.eye) * at00));
+	vec4 up = mat4::rotate(v.normalize(), theta) * up00;
+
+	cam.eye = vec3(eye.x, eye.y, eye.z);
+	cam.at = vec3(at.x, at.y, at.z);
+	cam.up = vec3(up.x, up.y, up.z);
+
+
 	return mat4::look_at(cam.eye, cam.at, cam.up);
 	//return view_matrix0 * mat4::rotate(v.normalize(), theta);
 }
