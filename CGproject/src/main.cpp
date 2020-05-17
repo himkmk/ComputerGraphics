@@ -316,36 +316,53 @@ void keyboard( GLFWwindow* window, int key, int scancode, int action, int mods )
 
 #endif
 	}
-	else if(action==GLFW_RELEASE)
+	
+	else if (action == GLFW_RELEASE)
 	{
-		if(key==GLFW_KEY_KP_ADD||(key==GLFW_KEY_EQUAL&&(mods&GLFW_MOD_SHIFT)))	b.add = false;
-		else if(key==GLFW_KEY_KP_SUBTRACT||key==GLFW_KEY_MINUS) b.sub = false;
+		if (key == GLFW_KEY_KP_ADD || (key == GLFW_KEY_EQUAL && (mods & GLFW_MOD_SHIFT)))	b.add = false;
+		else if (key == GLFW_KEY_KP_SUBTRACT || key == GLFW_KEY_MINUS) b.sub = false;
 
-		else if (key == GLFW_KEY_LEFT_SHIFT)
-		{
-			SHIFT_ON = false;
-		}
-		else if (key == GLFW_KEY_LEFT_CONTROL)
-		{
-			CTRL_ON = false;
-		}
+		else if (key == GLFW_KEY_LEFT_SHIFT) { SHIFT_ON = false; }
+		else if (key == GLFW_KEY_LEFT_CONTROL) { CTRL_ON = false; }
+
+		//******WASD 움직임 end*********//
+		else if (key == GLFW_KEY_W) { tb.end_W(); }
+		else if (key == GLFW_KEY_A) { tb.end_A(); }
+		else if (key == GLFW_KEY_S) { tb.end_S(); }
+		else if (key == GLFW_KEY_D) { tb.end_D(); }
+		else if (key == GLFW_KEY_RIGHT) { tb.end_RIGHT(); }
+		else if (key == GLFW_KEY_LEFT) { tb.end_LEFT(); }
+
 	}
 
 	if (action == GLFW_PRESS)
 	{
+		dvec2 pos; glfwGetCursorPos(window, &pos.x, &pos.y);
+		vec2 npos = cursor_to_ndc(pos, window_size);
+
 		if (key == GLFW_KEY_ESCAPE || key == GLFW_KEY_Q)	glfwSetWindowShouldClose(window, GL_TRUE);
 		else if (key == GLFW_KEY_H || key == GLFW_KEY_F1)	print_help();
 		else if (key == GLFW_KEY_HOME)					cam = camera();
 
-		else if (key == GLFW_KEY_LEFT_SHIFT)
-		{
-			SHIFT_ON = true;
-		}
-		else if (key == GLFW_KEY_LEFT_CONTROL)
-		{
-			CTRL_ON = true;
-		}
+		else if (key == GLFW_KEY_LEFT_SHIFT)				{SHIFT_ON = true;}
+		else if (key == GLFW_KEY_LEFT_CONTROL)		{CTRL_ON = true;}
+
+		//******WASD 움직임 begin*********//
+
+		else if (key == GLFW_KEY_W) { tb.begin_W(cam.view_matrix,npos); }
+		else if (key == GLFW_KEY_A) { tb.begin_A(cam.view_matrix, npos); }
+		else if (key == GLFW_KEY_S) { tb.begin_S(cam.view_matrix, npos); }
+		else if (key == GLFW_KEY_D) { tb.begin_D(cam.view_matrix, npos); }
+		else if (key == GLFW_KEY_RIGHT) { tb.begin_RIGHT(cam.view_matrix, npos); }
+		else if (key == GLFW_KEY_LEFT) { tb.begin_LEFT(cam.view_matrix, npos); }
+
+
 	}
+
+	printf("asdf");
+
+	
+	
 }
 
 void mouse( GLFWwindow* window, int button, int action, int mods )
@@ -381,7 +398,6 @@ void mouse( GLFWwindow* window, int button, int action, int mods )
 
 
 
-
 }
 
 void motion( GLFWwindow* window, double x, double y )
@@ -403,6 +419,7 @@ void motion( GLFWwindow* window, double x, double y )
 		printf("ZOOMING\t\tx: %f  -------  y: %f\n", x, y);
 		cam.view_matrix = tb.update_zooming(npos);
 	}
+
 }
 
 bool user_init()
@@ -448,6 +465,15 @@ int main( int argc, char* argv[] )
 	// enters rendering/event loop
 	for( frame=0; !glfwWindowShouldClose(window); frame++ )
 	{
+
+		if (tb.is_W()) { cam.view_matrix = tb.update_W(vec2(0)); }
+		if (tb.is_A()) { cam.view_matrix = tb.update_A(vec2(0)); }
+		if (tb.is_S()) { cam.view_matrix = tb.update_S(vec2(0)); }
+		if (tb.is_D()) { cam.view_matrix = tb.update_D(vec2(0)); }
+		if (tb.is_RIGHT()) { cam.view_matrix = tb.update_RIGHT(vec2(0)); }
+		if (tb.is_LEFT()) { cam.view_matrix = tb.update_LEFT(vec2(0)); }
+
+
 		glfwPollEvents();	// polling and processing of events
 		update();			// per-frame update
 		render();			// per-frame render
